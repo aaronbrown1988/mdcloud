@@ -1,0 +1,64 @@
+provider "google" {
+  credentials = "${file("${var.credentials}")}"
+  project     = "${var.project}"
+  region      = "${var.region}"
+}
+variable "swarm_workers_instance_type" {
+    default = "n1-standard-1"
+}
+
+variable "zone" {
+    default = "us-central1-a"
+}
+
+
+
+variable "image_name" {
+    default = "coreos-stable"
+}
+
+
+
+variable "ssh_user" {
+    default = "swarm"
+}
+
+
+
+variable "ssh_pub_key_file" {
+    default = "/home/aaron/.ssh/id_rsa.pub"
+}
+
+
+
+variable "region" {
+    default = "us-central1"
+}
+
+
+
+variable "credentials" {
+    default = "/home/aaron/Downloads/mdcloud-30f443044aae.json"
+}
+
+
+
+variable "project" {
+    default = "mdcloud"
+}
+
+
+variable "swarm_managers_instance_type" {
+    default = "n1-standard-1"
+}
+
+
+
+variable "swarm_managers" {
+    default = 1
+}
+
+
+variable "swarm_workers" {
+    default = 1
+}

@@ -1,0 +1,9 @@
+version: '2'
+services:
+  gromacs:
+    image: gromacs-nompi
+    volumes:
+      - ./input:/input
+      - ./output:/output
+    working_dir: /output
+    command: ["/build/bin/gmx", "mdrun", "-s","/input/d.dppc/topol.tpr", "-v"]
