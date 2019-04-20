@@ -19,3 +19,9 @@
       manager: "{{ hostvars[groups['managers'][0]]['inventory_hostname'] }}"
   roles:
     - swarm-join
+
+- name: Deploy Visualiser
+  hosts: manager
+  gather_facts: False
+  roles:
+    - setup-visualiser    

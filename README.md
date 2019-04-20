@@ -30,8 +30,16 @@ Running VMD is a little tricky in that it requires an X server on the host machi
 
 # But.. what about the cloud?
 
-To be continued.....
+* Spin up the infra `` cd infra/terraform && ../../terraform apply ``
+* setup the instances: `` cd infra/ansible && ansible-playbook -i inventory main.yml ``
+* Tear it all down when your done: `` cd infra/terraform && ../../terraform destory``
 
-https://read.acloud.guru/deploy-a-docker-swarm-cluster-on-gcp-with-terraform-dc1c40bb062e
+## Proposed workflow
+1. create a volume with the input files and one to hold the output
+2. on a manager create the service to run the job, using the manager volumes.
+3. When the service is done mount the volume into a simpler container and copy the results
+4. Destroy old volumes periodically.
 
+## Work in progress/ Links to read next time
 
+* Shared Volume driver: https://github.com/craimbert/docker-volume-gc-storage
