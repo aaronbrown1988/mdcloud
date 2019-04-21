@@ -21,7 +21,7 @@
     - swarm-join
 
 - name: Deploy Visualiser
-  hosts: manager
+  hosts: managers
   gather_facts: False
   roles:
     - setup-visualiser    
