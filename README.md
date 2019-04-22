@@ -43,3 +43,6 @@ Running VMD is a little tricky in that it requires an X server on the host machi
 ## Work in progress/ Links to read next time
 
 * Shared Volume driver: https://github.com/craimbert/docker-volume-gc-storage
+* * Shared Volume driver: https://github.com/craimbert/docker-volume-gc-storage
+* Further investigation of the "Fat Container method" 
+* Move the statefile to a GCS bucket : https://www.terraform.io/docs/backends/types/gcs.html
