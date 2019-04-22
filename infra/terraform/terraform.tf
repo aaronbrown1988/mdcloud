@@ -14,7 +14,7 @@ variable "zone" {
 
 
 variable "image_name" {
-    default = "coreos-stable"
+    default = "ubuntu-1804-lts"
 }
 
 

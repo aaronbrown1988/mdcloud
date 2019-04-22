@@ -1,0 +1,32 @@
+- block:
+  - name: update packages
+    apt:
+      name: "{{ packages }}"
+      update_cache: yes
+    vars:
+      packages:
+      - docker.io
+      - golang-go
+  
+  - name: Setup GCSFUSE Repo
+    raw: ' export GCSFUSE_REPO=gcsfuse-`lsb_release -c -s` && echo "deb https://packages.cloud.google.com/apt $GCSFUSE_REPO main" | sudo tee /etc/apt/sources.list.d/gcsfuse.list && curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -'
+
+  - name: Install GCSFUSE
+    apt:
+      name: gcsfuse
+      update_cache: yes  
+
+  - name: Remove useless packages from the cache
+    apt:
+      autoclean: yes
+
+  - name: Remove dependencies that are no longer required
+    apt:
+      autoremove: yes
+
+  - name: Install GCS Docker volume driver
+    raw: 'cd ~/ && go get github.com/craimbert/docker-volume-gc-storage && go install github.com/craimbert/docker-volume-gc-storage'
+
+  - name: Fix docker permissions
+    raw: gpasswd -a swarm docker  
+
