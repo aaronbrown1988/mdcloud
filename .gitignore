@@ -1,3 +1,5 @@
 gmx/output/
 gmx/output
 gmx/output/*
+infra/ansible/inventory
+infra/terraform/*.tfstate
