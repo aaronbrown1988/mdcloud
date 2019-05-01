@@ -1,9 +1,17 @@
 ---
-- name: Install Python
+
+- name: Install Docker
   hosts: managers:workers
+  sudo: yes
   gather_facts: False
   roles:
-    - python
+    - docker
+
+# - name: Install Python
+#   hosts: managers:workers
+#   gather_facts: False
+#   roles:
+#     - python
 
 - name: Init Swarm cluster
   hosts: managers
@@ -21,7 +29,7 @@
     - swarm-join
 
 - name: Deploy Visualiser
-  hosts: manager
+  hosts: managers
   gather_facts: False
   roles:
     - setup-visualiser    

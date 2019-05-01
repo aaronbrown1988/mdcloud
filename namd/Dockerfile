@@ -15,4 +15,4 @@ RUN sed -ie 's#Projects/namd2#namd#' arch/Linux-x86_64.fftw
 RUN sed -ie 's#Projects/namd2#namd#' arch/Linux-x86_64.tcl
 RUN ./config Linux-x86_64-g++ --charm-arch netlrts-linux-x86_64
 WORKDIR /namd/Linux-x86_64-g++
-RUN make -j4
+#RUN make

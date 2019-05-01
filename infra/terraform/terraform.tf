@@ -8,13 +8,13 @@ variable "swarm_workers_instance_type" {
 }
 
 variable "zone" {
-    default = "us-central1-a"
+    default = "asia-southeast1-a"
 }
 
 
 
 variable "image_name" {
-    default = "coreos-stable"
+    default = "ubuntu-1804-lts"
 }
 
 
@@ -32,7 +32,7 @@ variable "ssh_pub_key_file" {
 
 
 variable "region" {
-    default = "us-central1"
+    default = "asia-southeast1"
 }
 
 
