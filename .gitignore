@@ -2,4 +2,6 @@ gmx/output/
 gmx/output
 gmx/output/*
 infra/ansible/inventory
+infra/ansible/main.retry
 infra/terraform/*.tfstate
+infra/terraform/*.tfstate.backup

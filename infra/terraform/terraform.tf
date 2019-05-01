@@ -3,6 +3,14 @@ provider "google" {
   project     = "${var.project}"
   region      = "${var.region}"
 }
+
+terraform {
+  backend "gcs" {
+    bucket  = "mdcloud-tf-state"
+    prefix  = "terraform/state"
+  }
+}
+
 variable "swarm_workers_instance_type" {
     default = "n1-standard-1"
 }
