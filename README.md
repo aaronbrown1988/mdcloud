@@ -8,6 +8,14 @@ The following tools are available:
 * NAMD
 * VMD 
 
+
+## Layout
+
+There are a number of approaches within this repository to create a cloud based slurm/Compute cluster.
+ Each of these configurations is stored under a sperate folder with it's own set of terraform scripts,
+ ansible play books and instructions on how to run the applications.
+
+
 ## Locally?
 
 ### Gromacs

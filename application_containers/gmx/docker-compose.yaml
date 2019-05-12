@@ -1,0 +1,9 @@
+version: '2'
+services:
+  gromacs:
+    image: gcr.io/mdcloud/gmx
+    volumes:
+      - ./input:/input
+      - ./output:/output
+    working_dir: /output
+    command: ["/build/bin/gmx", "mdrun", "-s","/input/d.dppc/topol.tpr", "-v"]

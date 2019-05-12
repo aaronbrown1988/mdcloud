@@ -1,0 +1,32 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: gmx
+spec:
+  template:
+    spec:
+      containers:
+      - name: gmx
+        image: gcr.io/mdcloud/gmx
+        command: ["/build/bin/gmx", "mdrun", "-s","/input/d.dppc/topol.tpr", "-v"]
+        volumeMounts:
+        - mountPath: /input
+          name: input-disk
+        - mountPath: /output
+          name: output-disk
+      restartPolicy: Never
+      volumes:
+      - name: output-disk
+        # This GCE PD must already exist.
+        gcePersistentDisk:
+          pdName: output-disk
+          fsType: ext4
+      - name: input-disk
+        # This GCE PD must already exist.
+        gcePersistentDisk:
+          pdName: input-disk
+          fsType: ext4 
+  backoffLimit: 4
+  
+   
+
