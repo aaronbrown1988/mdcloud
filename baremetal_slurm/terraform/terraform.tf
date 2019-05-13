@@ -7,7 +7,7 @@ provider "google" {
 terraform {
   backend "gcs" {
     bucket  = "mdcloud-tf-state"
-    prefix  = "terraform/state"
+    prefix  = "terraform/bare-metal"
   }
 }
 
