@@ -1,0 +1,22 @@
+- block:
+  - name: update packages
+    apt:
+      name: "{{ packages }}"
+      update_cache: yes
+    vars:
+      packages:
+      - git
+      - gcc
+      - make
+      - ruby
+      - ruby-dev
+      - libpam0g-dev
+      - libmariadb-client-lgpl-dev
+      - libmysqlclient-dev
+      - libmunge-dev
+      - libmunge2
+      - munge
+      - slurmctld
+      - slurmdbd
+  - name: Install Gems
+    raw: 'gem install fpm'    

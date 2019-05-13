@@ -1,0 +1,13 @@
+- block:
+  - name: update packages
+    apt:
+      name: "{{ packages }}"
+      update_cache: yes
+    vars:
+      packages:
+      - libmunge-dev
+      - libmunge2
+      - munge
+      - slurmd
+  - name: Install Gems
+    raw: 'gem install fpm'    
