@@ -1,4 +1,4 @@
-geo_chem/run_dirs/**
+geos-chem/run_dirs/
 gmx/output/
 gmx/output
 gmx/output/*
